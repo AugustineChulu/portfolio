@@ -1,0 +1,105 @@
+#about_me_wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#about_me_wrapper > div{
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+#about_me_intro{
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+    padding: 3rem 0;
+    align-items: center;
+}
+
+#about_me_intro > div{
+    flex: 1 0 50%;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+    align-items: center;
+}
+
+#about_me_intro > div:nth-child(1){
+    padding: 0 5%;
+}
+
+#about_me_intro > div:nth-child(2){
+    justify-items: center;
+}
+
+@keyframes spin {
+    45%{ transform: perspective(1000px) rotateX(0deg) }
+    50%{ transform: perspective(1000px) rotateX(-180deg) }
+    95%{ transform: perspective(1000px) rotateX(-180deg) }
+    100%{ transform: perspective(1000px) rotateX(-360deg) }
+}
+
+#branding_x_me_wrapper{
+    position: relative;
+    height: calc(var(--max_unit_width) / 1.2);
+    width: calc(var(--max_unit_width) / 1.2);
+    background-color: var(--gray_tint);
+    border-radius: 100%;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% 0;
+    transform: perspective(1000px) rotateY(0deg);
+
+    animation: spin 30s cubic-bezier(0.42, 0.0, 0.58, 1.5) infinite;
+}
+
+#branding_x_me_wrapper > div{
+    height: 98%;
+    width: 98%;
+    border-radius: 100%;
+}
+
+#branding_x_me_wrapper > div:nth-child(1){
+    transform: translateZ(-1px) translateX(-50%) translateY(-50%) rotateX(180deg);
+}
+
+#branding_x_me_wrapper > div:nth-child(1) > svg{
+    height: 90%;
+    width: 90%;
+}
+
+#branding_x_me_wrapper > div:nth-child(1) > svg > path{
+    fill: var(--gray_shade);
+}
+
+#branding_x_me_wrapper > div:nth-child(2){
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(1px) translateX(-50%) translateY(-50%);
+}
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
+@media only screen and (max-width: 1000px)
+{
+
+    
+
+}
+
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  LAPTOPS */
+@media only screen and (max-width: 450px)
+{
+
+    #about_me_intro{
+        flex-flow: column nowrap;
+        padding: 1rem 0;
+    }
+    
+    #about_me_intro > div:nth-child(2){
+        margin-top: 2rem;
+    }
+
+}

@@ -1,0 +1,126 @@
+.project_card{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project_card::before{
+    position: absolute;
+    z-index: 1;
+    content: "";
+    inset: 0;
+    border-radius: inherit;
+    background-color: #000;
+    opacity: 0.6;
+
+    transition: opacity 0.5s;
+}
+
+.project_card.focused_card::before{
+    opacity: 0;
+}
+
+.project_title{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    text-align: center;
+    font-family: abel;
+    color: var(--gray_tint);
+    visibility: hidden;
+    opacity: 0;
+
+    transition: visibility 0.5s, opacity 0.5s, bottom 0.5s;
+}
+
+.project_card.focused_card > .project_title{
+    bottom: calc(100% + 0.5rem);
+    visibility: visible;
+    opacity: 1;
+}
+
+.project_img{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    background-size: 0 0;
+}
+
+.project_img::before{
+    position: absolute;
+    content: '';
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: filter 0.5s, transform 0.5s;
+}
+
+.project_card.focused_card:hover > .project_img::before,
+.project_card.focused_card:focus > .project_img::before{
+    transform: scale(1.1);
+}
+
+.project_card:not(.focused_card) > .project_img::before{
+    filter: grayscale(95%);
+}
+
+.project_card:not(.focused_card):hover > .project_img::before,
+.project_card:not(.focused_card):focus > .project_img::before{
+    filter: grayscale(0);
+}
+
+.project_address{
+    position: absolute;
+    z-index: 2;
+    top: calc(calc(var(--std_button_dimen) * 1.2) * -1 / 7);
+    right: calc(calc(var(--std_button_dimen) * 1.2) * -1 / 7);
+    height: calc(var(--std_button_dimen) * 1.2);
+    width: calc(var(--std_button_dimen) * 1.2);
+    color: var(--theme_shade);
+    background-color: #ffffffaa;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border: solid 2px var(--theme_shade);
+    border-radius: var(--radius_lg);
+    visibility: hidden;
+    opacity: 0;
+
+    display: grid;
+    place-items: center;
+
+    transition: background-color 0.5s, color 0.5s, visibility 0.5s, opacity 0.5s;
+}
+
+.project_card.focused_card > .project_address{
+    visibility: visible;
+    opacity: 1;
+}
+
+.project_address:hover,
+.project_address:focus{
+    color: #fff;
+    background-color: var(--theme_shade);
+}
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
+@media only screen and (max-width: 1000px)
+{
+
+    
+
+}
+
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  LAPTOPS */
+@media only screen and (max-width: 450px)
+{
+
+    
+
+}
