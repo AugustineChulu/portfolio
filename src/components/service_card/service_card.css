@@ -6,7 +6,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
-    padding: 1rem 1rem 2rem 1rem;
+    padding: 2rem;
     border-radius: var(--radius_lg);
     background-color: var(--surface);
     box-shadow: 0 0 0.5rem 0 #00000033;
@@ -73,6 +73,7 @@
 .service_card:hover > div:first-child::after,
 .service_card:focus > div:first-child::after{
     background-color: var(--theme_tint);
+    color: var(--surface);
 }
 
 .service_card > h3{

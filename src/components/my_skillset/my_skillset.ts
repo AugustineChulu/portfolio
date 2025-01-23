@@ -8,7 +8,7 @@ export default function mySkillsetView(): string{
             <div id="my_skillset_intro">
                 <div>
                     <h1>
-                        <i class="fa-solid fa-ranking-star"></i>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
                         &nbsp; MY SKILLSET
                     </h1>
 

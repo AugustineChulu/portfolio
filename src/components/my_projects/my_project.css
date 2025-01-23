@@ -19,7 +19,7 @@
 }
 
 #my_projects_intro > div:nth-child(2){
-    padding: 1rem 5% 0 5%;
+    padding: 2rem 5% 0 5%;
 }
 
 #project_cards_wrapper{
@@ -35,7 +35,7 @@
     height: var(--std_button_dimen);
     width: var(--std_button_dimen);
     color: var(--theme_shade);
-    background-color: var(--theme_tint);
+    background-color: var(--gray_tint);
     font-size: 1.2rem;
     border-radius: 100%;
     box-shadow: 0 0 0.5rem 0 var(--gray_tint);
@@ -48,7 +48,7 @@
 
 #project_cards_wrapper > button:hover,
 #project_cards_wrapper > button:focus{
-    background-color: var(--gray_tint);
+    background-color: var(--theme_tint);
 }
 
 #prev_project_btn{
@@ -148,7 +148,7 @@
     }
     
     #my_projects_intro > div:nth-child(2){
-        padding: 1rem 2% 0 2%;
+        padding: 2rem 2% 0 2%;
     }
 
     #project_cards_wrapper{

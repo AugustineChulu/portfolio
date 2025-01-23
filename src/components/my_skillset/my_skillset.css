@@ -138,12 +138,12 @@
     position: relative;
     height: calc(var(--max_unit_width));
     width: calc(var(--max_unit_width));
-    /* background-color: purple; */
 }
 
-#skill_bubble_card_wrapper > div{
-    height: 100%;
-    width: 100%;
+.sb_card{
+    height: calc(var(--std_button_dimen) * 3);
+    width: calc(var(--std_button_dimen) * 3);
+    border-radius: 100%;
 
     opacity: 0;
     visibility: hidden;
@@ -151,12 +151,12 @@
     transition: opacity 1s, visibility 1s;
 }
 
-#skill_bubble_card_wrapper > div.active{
+.sb_card.active{
     opacity: 1;
     visibility: visible;
 }
 
-#skill_bubble_card_wrapper > div::after{
+.sb_card::after{
     position: absolute;
     font-family: 'FontAwesome';
     font-size: 1.5rem;
@@ -172,11 +172,16 @@
     display: grid;
     place-items: center;
 
-    transition: color 0.5s;
+    transition: color 0.5s, box-shadow 0.5s, background-color 0.5s;
 }
 
-#skill_bubble_card_wrapper > div.active::after{
-    color: var(--theme_shade);
+.sb_card.active::after{
+    color: var(--theme);
+}
+
+.sb_card.active:hover::after{
+    background-color: #fff;
+    box-shadow: 0 0 2rem 0 #fff;
 }
 
 .sb_card > div{
@@ -186,6 +191,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    transform-style: preserve-3d;
     transform: translateX(-50%) translateY(-50%);
     height: calc(var(--std_button_dimen) * 2);
     width: calc(var(--std_button_dimen) * 2);
@@ -217,8 +223,8 @@
 
 .sb_card > div:hover,
 .sb_card > div:focus{
-    background-color: #fff;
-    box-shadow: 0 0 0.5rem 0.2rem var(--color);
+    background-color: #ffffffaa;
+    box-shadow: 0 0 1rem 0.2rem var(--color);
 }
 
 .sb_card > div:hover::before,
@@ -228,14 +234,19 @@
 
 .sb_card > div::after{
     position: absolute;
-    z-index: -1;
     content: "";
     inset: 0;
     opacity: 0;
     border-radius: 100%;
+    transform: translateZ(-1px);
     background-color: var(--color);
 
     transition: opacity 0.5s;
+}
+
+.sb_card > div:hover::after,
+.sb_card > div:focus::after{
+    opacity: 1;
 }
 
 .sb_card > div::before{
@@ -327,6 +338,7 @@
     }
 
     #skill_cards_wrapper > div > div > div:last-child{
+        padding-top: 1rem;
         display: flex;
         flex-flow: row wrap;
         gap: 0.5rem;

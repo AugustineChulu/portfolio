@@ -9,7 +9,6 @@
 #menu_btn{
     height: var(--std_button_dimen);
     width: var(--std_button_dimen);
-    margin-left: 0.5rem;
     background-color: #ffffff22;
     border-radius: var(--radius_me);
     display: grid;
@@ -18,6 +17,7 @@
     transition: background-color 1s, color 1s;
 }
 
+#menu_btn:hover,
 #menu_btn.focused{
     background-color: var(--gray_tint);
     color: var(--base);
@@ -127,7 +127,7 @@
 {
 
     #navbar > div.active > i{
-        transform: translateX(-50%) translateY(-50%) scale(1.1);
+        transform: translateX(-50%) translateY(-50%);
     }
 
 }

@@ -25,9 +25,9 @@
     bottom: 50%;
     left: 50%;
     transform: translateX(-50%);
-    width: 15rem;
+    width: var(--focused_card_width);
     text-align: center;
-    font-family: abel;
+    font-family: metrophobic;
     color: var(--gray_tint);
     visibility: hidden;
     opacity: 0;
@@ -36,7 +36,7 @@
 }
 
 .project_card.focused_card > .project_title{
-    bottom: calc(100% + 0.5rem);
+    bottom: calc(100% + 1rem);
     visibility: visible;
     opacity: 1;
 }
@@ -121,6 +121,8 @@
 @media only screen and (max-width: 450px)
 {
 
-    
+    .project_title{
+        width: calc(var(--max_unit_width) / 1.3);
+    }
 
 }
