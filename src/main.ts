@@ -13,32 +13,32 @@ app_view.innerHTML += `
 `;
 
 const balls = document.querySelectorAll<HTMLDivElement>(".ball");
-const progressBar = document.querySelector("#progress_bar") as HTMLElement;
-const landing_page = document.querySelector("#landing_page") as HTMLElement;
+const progressBar = document.getElementById("progress_bar") as HTMLElement;
+const landing_page = document.getElementById("landing_page") as HTMLElement;
 const preloadedImages: Record<string, HTMLImageElement> = {};
 const bg_pattern1 = document.querySelector(".bg_pattern1") as HTMLElement;
 
 document.addEventListener("DOMContentLoaded", () => {
     
     const imagePaths: string[] = [
-        `${import.meta.env.BASE_URL}images/id_photo.png`,
-        `${import.meta.env.BASE_URL}images/skills/HTML5.png`,
-        `${import.meta.env.BASE_URL}images/skills/CSS3.png`,
-        `${import.meta.env.BASE_URL}images/skills/JS.png`,
-        `${import.meta.env.BASE_URL}images/skills/TS.png`,
-        `${import.meta.env.BASE_URL}images/skills/WORDPRESS.png`,
-        `${import.meta.env.BASE_URL}images/skills/NEXT.png`,
-        `${import.meta.env.BASE_URL}images/skills/LARAVEL.png`,
-        `${import.meta.env.BASE_URL}images/skills/REACT.png`,
-        `${import.meta.env.BASE_URL}images/skills/BLENDER.png`,
-        `${import.meta.env.BASE_URL}images/skills/PS.png`,
-        `${import.meta.env.BASE_URL}images/skills/ILL.png`,
-        `${import.meta.env.BASE_URL}images/projects/project1.jpg`,
-        `${import.meta.env.BASE_URL}images/projects/project2.jpg`,
-        `${import.meta.env.BASE_URL}images/projects/project3.jpg`,
-        `${import.meta.env.BASE_URL}images/projects/project4.jpg`,
-        `${import.meta.env.BASE_URL}images/projects/project5.jpg`,
-        `${import.meta.env.BASE_URL}images/projects/project6.jpg`,
+        `${import.meta.env.BASE_URL}images/id_photo.webp`,
+        `${import.meta.env.BASE_URL}images/skills/HTML5.webp`,
+        `${import.meta.env.BASE_URL}images/skills/CSS3.webp`,
+        `${import.meta.env.BASE_URL}images/skills/JS.webp`,
+        `${import.meta.env.BASE_URL}images/skills/TS.webp`,
+        `${import.meta.env.BASE_URL}images/skills/WORDPRESS.webp`,
+        `${import.meta.env.BASE_URL}images/skills/NEXT.webp`,
+        `${import.meta.env.BASE_URL}images/skills/LARAVEL.webp`,
+        `${import.meta.env.BASE_URL}images/skills/REACT.webp`,
+        `${import.meta.env.BASE_URL}images/skills/BLENDER.webp`,
+        `${import.meta.env.BASE_URL}images/skills/PS.webp`,
+        `${import.meta.env.BASE_URL}images/skills/ILL.webp`,
+        `${import.meta.env.BASE_URL}images/projects/project1.webp`,
+        `${import.meta.env.BASE_URL}images/projects/project2.webp`,
+        `${import.meta.env.BASE_URL}images/projects/project3.webp`,
+        `${import.meta.env.BASE_URL}images/projects/project4.webp`,
+        `${import.meta.env.BASE_URL}images/projects/project5.webp`,
+        `${import.meta.env.BASE_URL}images/projects/project6.webp`,
     ];    
 
     let imagesLoaded: number = 0;
@@ -53,10 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resourceMapping();
             progressBar.classList.remove("pulse");
+            progressBar.classList.add("completed");
 
             setTimeout(() => {
                 landing_page.classList.add("loaded");
-                bg_pattern1.classList.add('enhance');
+                setTimeout(() => {
+                    bg_pattern1.classList.add('enhance');
+                }, 50);
+                
                 setTimeout(() => {
                     balls.forEach((artifact, index) => {
                         artifact.classList.add(`animate_${index + 1}`);
@@ -186,7 +190,7 @@ defaultIconButtons.forEach((button) =>{
     })
 })
 
-const button_ring = document.querySelector('#button_ring') as HTMLElement;
+const button_ring = document.getElementById('button_ring') as HTMLElement;
 const ring_text: string = ' EXPLORE PAGE';
 const ring_text_characters: string[] = ring_text.split('');
 
@@ -196,8 +200,8 @@ for (let c = 0; c < ring_text_characters.length; c++) {
     button_ring.innerHTML += ` <span style="--index: ${c}">${ring_text_characters[c]}</span>`
 }
 
-const explore_btn = document.querySelector("#explore_btn") as HTMLButtonElement;
-const landing_page_wrapper = document.querySelector('#landing_page_wrapper') as HTMLElement;
+const explore_btn = document.getElementById('explore_btn') as HTMLButtonElement;
+const landing_page_wrapper = document.getElementById('landing_page_wrapper') as HTMLElement;
 
 explore_btn.addEventListener('click', () => {
 
@@ -214,17 +218,21 @@ explore_btn.addEventListener('click', () => {
                 
             });
 
-            (document.querySelector('#anim_wrapper') as HTMLElement).classList.add('expand');
-            (document.querySelector('#anim_logo') as HTMLElement).classList.add('fade');
+            (document.getElementById('anim_wrapper') as HTMLElement).classList.add('expand');
+            (document.getElementById('anim_logo') as HTMLElement).classList.add('fade');
 
             setTimeout(() => {
     
-                (document.querySelector('#page_content') as HTMLElement).classList.add('loaded');
+                (document.getElementById('page_content') as HTMLElement).classList.add('loaded');
                 landing_page_wrapper.classList.add('unloaded');
                 setTimeout(() => {
     
-                    (document.querySelector('#navbar') as HTMLElement).classList.add('loaded');
-                    (document.querySelector('#view_wrapper') as HTMLElement).classList.add('loaded');
+                    (document.getElementById('navbar') as HTMLElement).classList.add('loaded');
+                    (document.getElementById('view_wrapper') as HTMLElement).classList.add('loaded');
+
+                    setTimeout(() => {
+                        (document.getElementById('branding_x_me_wrapper') as HTMLElement).classList.add('animate');
+                    }, 1000);
                 }, 1000);
 
             }, 1000);
@@ -236,8 +244,8 @@ explore_btn.addEventListener('click', () => {
 });
 
 /**************************************************************************************************************/
-const menu_btn = document.querySelector('#menu_btn') as HTMLElement;
-const floating_menu_wrapper = document.querySelector('#floating_menu_wrapper') as HTMLElement;
+const menu_btn = document.getElementById('menu_btn') as HTMLElement;
+const floating_menu_wrapper = document.getElementById('floating_menu_wrapper') as HTMLElement;
 
 menu_btn.addEventListener('click', () =>{
 
@@ -248,9 +256,9 @@ menu_btn.addEventListener('click', () =>{
 /**************************************************************************************************************/
 
 const tabs = document.querySelectorAll('.tab') as NodeListOf<HTMLElement>;
-const view_wrapper = document.querySelector('#view_wrapper') as HTMLElement;
-const navbar = document.querySelector('#navbar') as HTMLElement;
-const active_tab_indicator = document.querySelector('#active_tab_indicator') as HTMLElement;
+const view_wrapper = document.getElementById('view_wrapper') as HTMLElement;
+const navbar = document.getElementById('navbar') as HTMLElement;
+const active_tab_indicator = document.getElementById('active_tab_indicator') as HTMLElement;
 
 tabs.forEach((tab, index) =>{
 
@@ -281,8 +289,8 @@ tabs.forEach((tab, index) =>{
 /**************************************************************************************************************/
 
 const skill_cards = document.querySelectorAll('.skill_card') as NodeListOf<HTMLElement>;
-const skill_cards_wrapper = document.querySelector('#skill_cards_wrapper') as HTMLElement;
-const skill_bubble_card_wrapper = document.querySelector('#skill_bubble_card_wrapper') as HTMLElement;
+const skill_cards_wrapper = document.getElementById('skill_cards_wrapper') as HTMLElement;
+const skill_bubble_card_wrapper = document.getElementById('skill_bubble_card_wrapper') as HTMLElement;
 
 skill_cards.forEach((card, index) =>{
 

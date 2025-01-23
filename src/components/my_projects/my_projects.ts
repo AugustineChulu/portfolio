@@ -28,7 +28,7 @@ export default function myProjectsView(): string{
                     <div id="project_cards_wrapper">
                     
                         <div id="cards_carousel">
-                            ${projectCardView('left3_card', 'SAMPLE PROJECT', 'project10', '', '')}
+                            ${projectCardView('left3_card', 'COMING SOON...', 'project10', '', '')}
 
                             ${projectCardView('left2_card', 'STOCK MANAGEMENT SYSTEM', 'project1', '', '')}
 
@@ -42,11 +42,11 @@ export default function myProjectsView(): string{
 
                             ${projectCardView('right3_card', 'ILLUSTRATIONS', 'project6', 'https://www.instagram.com/chuluaugustine/', 'visit instagram')}
 
-                            ${projectCardView('', 'SAMPLE PROJECT', 'project7', '', '')}
+                            ${projectCardView('', 'COMING SOON...', 'project7', '', '')}
 
-                            ${projectCardView('', 'SAMPLE PROJECT', 'project8', '', '')}
+                            ${projectCardView('', 'COMING SOON...', 'project8', '', '')}
 
-                            ${projectCardView('', 'SAMPLE PROJECT', 'project9', '', '')}
+                            ${projectCardView('', 'COMING SOON...', 'project9', '', '')}
                         </div>
 
                         <button type="button" class="default_icon_btn" id="prev_project_btn" title="previous">

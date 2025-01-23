@@ -6,7 +6,7 @@ export default function nav_wrapper_view(): string{
         <div id="nav_wrapper">
 
             <button type="button" class="default_icon_btn" id="menu_btn" title="menu">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-circle-dot fa-xl"></i>
             </button>
 
             <div id="navbar">
@@ -19,7 +19,7 @@ export default function nav_wrapper_view(): string{
                 </div>
         
                 <div class="tab">
-                    <i class="fa-solid fa-ranking-star"></i>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
                     <span>Skills</span>
                 </div>
 
