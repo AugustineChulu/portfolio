@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig(() => {
-  const outDir = process.env.GITHUB_ACTIONS ? 'dist' : `dist/portfolio`;
+  const projectName = 'portfolio';
+  const outDir = process.env.GITHUB_ACTIONS ? 'dist' : `dist/${projectName}`;
 
   return {
-    base: '/portfolio/',
+    base: `/${projectName}/`,
     build: { outDir },
   }
 })

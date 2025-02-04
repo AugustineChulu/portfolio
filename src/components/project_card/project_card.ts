@@ -1,6 +1,6 @@
 import './project_card.css';
 
-export default function projectCardView(
+export default function projectCard(
     cardClass: string,
     projectTitle: string, 
     projectID: string, 

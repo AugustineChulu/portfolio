@@ -1,0 +1,56 @@
+<!ELEMENT svg (defs?, g*, path*, circle*, rect*, filter*)>
+<!ATTLIST svg
+    xmlns CDATA #IMPLIED
+    viewBox CDATA #IMPLIED
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED
+>
+
+<!ELEMENT defs (style*)>
+<!ELEMENT style (#PCDATA)>
+
+<!ELEMENT g (path*, circle*, rect*)>
+<!ATTLIST g
+    class CDATA #IMPLIED
+>
+
+<!ELEMENT path EMPTY>
+<!ATTLIST path
+    d CDATA #REQUIRED
+    stroke CDATA #IMPLIED
+    stroke-width CDATA #IMPLIED
+    fill CDATA #IMPLIED
+>
+
+<!ELEMENT circle EMPTY>
+<!ATTLIST circle
+    cx CDATA #IMPLIED
+    cy CDATA #IMPLIED
+    r CDATA #IMPLIED
+    stroke CDATA #IMPLIED
+    stroke-width CDATA #IMPLIED
+    fill CDATA #IMPLIED
+>
+
+<!ELEMENT rect EMPTY>
+<!ATTLIST rect
+    x CDATA #IMPLIED
+    y CDATA #IMPLIED
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED
+    stroke CDATA #IMPLIED
+    stroke-width CDATA #IMPLIED
+    fill CDATA #IMPLIED
+    filter CDATA #IMPLIED
+>
+
+<!ELEMENT filter (feTurbulence*)>
+<!ATTLIST filter id CDATA #REQUIRED>
+
+<!ELEMENT feTurbulence EMPTY>
+<!ATTLIST feTurbulence
+    type CDATA #IMPLIED
+    baseFrequency CDATA #IMPLIED
+    numOctaves CDATA #IMPLIED
+    stitchTiles CDATA #IMPLIED
+>

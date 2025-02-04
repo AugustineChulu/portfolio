@@ -1,109 +1,97 @@
 .service_card{
     position: relative;
-    flex: 0 0 calc(var(--max_unit_width) / 1.3);
-    min-height: calc(var(--max_unit_width) / 1.7);
-    
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
-    padding: 2rem;
-    border-radius: var(--radius_lg);
-    background-color: var(--surface);
-    box-shadow: 0 0 0.5rem 0 #00000033;
+    flex: 0 0 calc(var(--max_unit) * 1.5);
+    max-width: calc(var(--max_unit) * 1.5);
+    min-height: calc(var(--max_unit) * 1.2);
+    cursor: default;
 
-    transition: 0.5s;
-}
-
-.service_card:hover,
-.service_card:focus{
-    box-shadow: 0 0 0.5rem 0 var(--theme_tint);
+    transition: box-shadow 0.5s;
 }
 
 .service_card::before{
     position: absolute;
-    content: "";
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 0.4rem;
-    width: 50%;
-    border-radius: 1rem 1rem 0 0;
-    background-color: transparent;
+    z-index: -1;
+    content: attr(data-service-type);
+    color: var(--accent);
+    font-family: gabarito-mid;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    top: calc(var(--min_unit) * 1.6 + 1rem);
+    right: calc(100% - (var(--min_unit) * 1.6) / 2 - 0.1rem);
+    transform-origin: 100% 0%;
+    transform: rotate(-90deg);
+    width: max-content;
 
-    transition: background-color 0.5s;
+    transition: color 0.5s;
+}
+
+.service_card:hover h2 > i,
+.service_card:focus h2 > i,
+.service_card:hover p,
+.service_card:focus p{
+    background-color: var(--txt);
 }
 
 .service_card:hover::before,
 .service_card:focus::before{
-    background-color: var(--theme_tint);
+    color: var(--txt);
 }
 
-.service_card > div:first-child{
+.service_card > h2{
     position: relative;
-    grid-column: 1;
-    grid-row: 1;
-    height: calc(var(--std_button_dimen) * 1.5);
-    width: calc(var(--std_button_dimen) * 1.5);
-    border-radius: var(--radius_lg);
-    margin: 0 1.5rem 0 0;
+    height: calc(var(--min_unit) * 1.6);
+    width: 100%;
+    white-space: wrap;
+    box-sizing: border-box;
+    padding: 0 0 0 calc(var(--min_unit) * 2);
+    display: flex;
+    align-items: center;
 
-    transition: background-color 0.5s;
+    transition: color 0.5s;
 }
 
-.service_card > div:first-child::after{
-    position: absolute;
-    font-family: 'FontAwesome';
-    font-size: 1.1rem;
-    content: attr(data-icon);
-    left: 0.7rem;
-    top: 0.5rem;
-    height: inherit;
-    width: inherit;
-    border-radius: inherit;
-    background-color: #ffffff22;
-    color: var(--gray_tint);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    display: grid;
-    place-items: center;
-
-    transition: background-color 0.5s;
-}
-
-.service_card:hover > div:first-child::after,
-.service_card:focus > div:first-child::after{
-    background-color: var(--theme_tint);
+.service_card:hover > h2,
+.service_card:focus > h2{
     color: var(--surface);
 }
 
-.service_card > h3{
-    grid-column: 2;
-    grid-row: 1;
-    align-self: center;
-    padding-right: 0.5rem;
+.service_card > h2 > i{
+    position: absolute; 
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: calc(var(--min_unit) * 1.6);
+    width: calc(var(--min_unit) * 1.6);
+    display: grid;
+    place-items: center;
+    color: var(--theme);
+    font-size: 0.8em;
+    background-color: var(--accent_tint);
 
-    transition: color 0.5s;
-}
-
-.service_card:hover > h3,
-.service_card:focus > h3{
-    color: var(--theme_tint);
+    transition: background-color 0.5s;
 }
 
 .service_card > p{
-    grid-column: 1/3;
-    grid-row: 2;
-    padding-top: 1.5rem;
-    /* text-align: center; */
+    height: calc( 100% - var(--min_unit) * 1.6 - 3rem);
+    padding: 1rem 2rem 2rem 2rem;
+    margin-left: calc(var(--min_unit) * 1.6);
+    color: var(--theme);
+    background-color: var(--accent_tint);
 
-    transition: color 0.5s;
+    transition: background-color 0.5s;
 }
 
 /*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
 @media only screen and (max-width: 1000px)
 {
 
-    
+    .service_card{
+        flex: 1 0 calc(var(--max_unit));
+    }
+
+    .service_card::before{
+        font-size: 2em;
+    }
 
 }
 
@@ -113,7 +101,8 @@
 {
 
     .service_card{
-        flex: 1 0 calc(var(--max_unit_width) / 1.3);
+        flex: 1 0 100%;
+        max-width: unset;
     }
 
 }

@@ -1,0 +1,441 @@
+#my_skillset_wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#my_skillset_wrapper > div{
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+#my_skillset_intro{
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 3rem 0;
+    align-items: center;
+}
+
+#my_skillset_intro > div{
+    flex: 1 0 50%;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+    align-items: center;
+}
+
+#my_skillset_intro > div:nth-child(2){
+    padding-right: 10%;
+}
+
+#my_skillset_intro > div:nth-child(1){
+    justify-items: center;
+}
+
+.skill_card{
+    position: relative;
+    color: var(--accent);
+    cursor: pointer;
+
+    transition: color 0.5s;
+}
+
+.skill_card::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(var(--min_unit) * 1.5);
+    background-color: var(--accent);
+    background: repeating-linear-gradient(
+        -55deg,
+        var(--accent_shade),
+        var(--accent_shade) 10px,
+        var(--accent_shade2) 10px,
+        var(--accent_shade2) 20px
+    );
+    opacity: 0.2;
+
+    transition: background-color 0.5s, height 0.5s;
+}
+
+.skill_card.active{
+    color: var(--gray_shade);
+}
+
+.skill_card.active > div > h2::before{
+    background-color: var(--txt);
+    color: var(--theme);
+}
+
+.skill_card.active > div::before{
+    background-color: var(--txt);
+    height: calc(100%);
+}
+
+.skill_card.active > div::after{
+    width: calc(100% - var(--min_unit) * 1.5);
+}
+
+.skill_card.active > div > h2{
+    color: var(--txt);
+}
+
+#skill_cards_wrapper > :not(div.active):hover > div > h2,
+#skill_cards_wrapper > :not(div.active):focus > div > h2{
+    color: var(--accent_tint_trans);
+}
+
+#skill_cards_wrapper{
+    padding-left: calc(var(--min_unit) / 2);
+}
+
+.skill_card > div::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 0;
+    width: calc(var(--min_unit) * 1.5);
+    background-color: var(--accent);
+
+    transition: background-color 0.5s, height 0.5s;
+}
+
+.skill_card > div::after{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: calc(var(--min_unit) * 1.5);
+    height: calc(var(--min_unit) * 1.5);
+    height: 100%;
+    width: 0;
+    background-color: #ffffff10;
+
+    transition: width 0.5s;
+}
+
+.skill_card:last-child > div{
+    padding-bottom: 0;
+}
+
+.skill_card > div > h2{
+    position: relative;
+    height: calc(var(--min_unit) * 1.5);
+    width: max-content;
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    color: var(--accent_shade);
+    padding: 0 0 0 calc(var(--min_unit) * 2);
+
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.skill_card > div > h2::before{
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 0.85em;
+    content: attr(data-icon);
+    top: 0;
+    left: 0;
+    height: calc(var(--min_unit) * 1.5);
+    width: calc(var(--min_unit) * 1.5);
+    background-color: var(--accent);
+    color: var(--accent_tint);
+
+    display: grid;
+    place-items: center;
+
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.skill_card > div > p{
+    padding: 1rem 1rem 2rem calc(var(--min_unit) * 2);
+}
+
+.skill_card > div > div:last-child{
+    display: none;
+}
+
+#skill_cards_wrapper:last-child > div::before{
+    border-radius: 0 0 var(--radius_lg) var(--radius_lg);
+}
+
+#skill_bubble_card_wrapper{
+    position: relative;
+    height: calc(var(--max_unit) * 2);
+    width: calc(var(--max_unit) * 2);
+    display: grid;
+    place-items: center;
+}
+
+.skill_bubble_card{
+    position: absolute;
+    height: calc(var(--min_unit) * 3.8);
+    width: calc(var(--min_unit) * 3.8);
+    border-radius: 100%;
+
+    transition: box-shadow 0.5s;
+}
+
+.skill_bubble_card:hover{
+    box-shadow: 0 0 2rem 0 #fff !important;
+}
+
+.skill_bubble_card  *{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.skill_bubble_card.active *{
+    opacity: 1;
+    visibility: visible;
+}
+
+.skill_bubble_card.active::after{
+    opacity: 1;
+    visibility: visible;
+    color: var(--accent_tint);
+
+    transition: background-color 0.5s, color 1s;
+}
+
+.skill_bubble_card.active:hover::after{
+    color: var(--accent_shade);
+    background-color: #fff
+}
+
+.skill_bubble_card.active > .bubble:hover::after,
+.skill_bubble_card.active > .bubble:focus::after{
+    background-color: #ffffffaa;
+}
+
+.skill_bubble_card.active > .bubble::before,
+.skill_bubble_card.active > .bubble::before{
+    opacity: 1;
+}
+
+.skill_bubble_card.active > .bubble:hover::before,
+.skill_bubble_card.active > .bubble:focus::before{
+    background-color: var(--color);
+}
+
+.skill_bubble_card.active > .bubble:nth-child(1){ transform: translateX(calc(var(--transform_unit) - calc(var(--transform_unit) * calc(var(--transform_unit_offset))))) translateY(calc(var(--transform_unit))); }/*left*/ 
+
+.skill_bubble_card.active > .bubble:nth-child(2){ transform: translateX(calc(var(--transform_unit) + calc(var(--transform_unit) * calc(var(--transform_unit_offset))))) translateY(calc(var(--transform_unit)));  }/*right*/
+
+.skill_bubble_card.active > .bubble:nth-child(3){ transform: translateX(calc(var(--transform_unit))) translateY(calc(var(--transform_unit) - calc(var(--transform_unit) * calc(var(--transform_unit_offset))))); }/*top*/
+
+.skill_bubble_card.active > .bubble:nth-child(4){ transform: translateX(calc(var(--transform_unit))) translateY(calc(var(--transform_unit) + calc(var(--transform_unit) * calc(var(--transform_unit_offset))))); }/*bottom*/
+
+.skill_bubble_card.active > .bubble:nth-child(5){ transform: translateX(calc(var(--transform_unit) - calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))) translateY(calc(var(--transform_unit) - calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))); }/*top left*/
+
+.skill_bubble_card.active > .bubble:nth-child(6){ transform: translateX(calc(var(--transform_unit) + calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))) translateY(calc(var(--transform_unit) + calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))); }/*bottom right*/
+
+.skill_bubble_card.active > .bubble:nth-child(7){ transform: translateX(calc(var(--transform_unit) + calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))) translateY(calc(var(--transform_unit) - calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))); }/*top right*/
+
+.skill_bubble_card.active > .bubble:nth-child(8){ transform: translateX(calc(var(--transform_unit) - calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))) translateY(calc(var(--transform_unit) + calc(var(--transform_unit) * calc(var(--transform_unit_offset) + 1.35)))); }/*bottom left*/
+
+.skill_bubble_card::after{
+    position: absolute;
+    z-index: 1;
+    font-family: 'FontAwesome';
+    font-size: 1.5em;
+    color: var(--accent_theme);
+    content: attr(data-icon);
+    background-color: var(--accent_theme);
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.bubble{
+    --transform_unit: -50%;
+    --transform_unit_offset: -4.5;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: calc(var(--min_unit) * 2.5);
+    width: calc(var(--min_unit) * 2.5);
+    border-radius: 100%;
+    background-size: 0;
+    background-color: var(--accent_theme);
+
+    transition: transform 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+.bubble:hover,
+.bubble:focus{
+    background-color: var(--color);
+    box-shadow: 0 0 1rem 0.5rem var(--color);
+}
+
+.bubble::after{
+    --unit: 3px;
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: '';
+    background-image: inherit;
+    background-size: 90% 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: inherit;
+    background-color: transparent;
+
+    transition: background-color 0.5s;
+}
+
+.bubble::before{
+    --unit: 3px;
+
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: calc(50% - var(--unit)/2);
+    height: var(--unit);
+    width: 100%;
+    background-color: var(--accent_theme);
+    opacity: 0;
+
+    transition: opacity 0.3s, background-color 0.5s;
+}
+
+.bubble:not(:nth-child(1))::before,
+.bubble:not(:nth-child(2))::before{
+    --unit: 4px;
+}
+
+.bubble:nth-child(1)::before{
+    transform: translateX(100%);
+}
+
+.bubble:nth-child(2)::before{
+    transform: translateX(-100%);
+}
+
+.bubble:nth-child(3)::before{
+    transform: rotate(90deg) translateX(100%);
+}
+
+.bubble:nth-child(4)::before{
+    transform: rotate(90deg) translateX(-100%);
+}
+
+.bubble:nth-child(5)::before{
+    transform: rotate(45deg) translateX(100%) translateY(100%);
+}
+
+.bubble:nth-child(6)::before{
+    transform: rotate(45deg) translateX(-100%) translateY(-100%);
+}
+
+.bubble:nth-child(7)::before{
+    transform: rotate(-45deg) translateX(-100%) translateY(-100%);
+}
+
+.bubble:nth-child(8)::before{
+    transform: rotate(-45deg) translateX(100%) translateY(100%);
+}
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
+@media only screen and (max-width: 1000px)
+{
+
+    #my_skillset_intro{
+        flex-flow: column nowrap;
+        padding: 1rem 0;
+    }
+
+    #my_skillset_intro > div:nth-child(1){
+        display: none;
+    }
+
+    #my_skillset_intro > div:nth-child(2){
+        padding-right: unset;
+    }
+
+    #my_skillset_intro > div:nth-child(2) > h1{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #skill_cards_wrapper{
+        padding: 0 7%;
+    }
+
+    .skill_card > div > div:last-child{
+        padding: 1rem 1rem 2rem calc(var(--min_unit) * 2);
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+    }
+
+    .skill_card > div > div:last-child > div{
+        position: relative;
+        height: var(--min_unit);
+        padding: 0 1rem 0 calc(var(--min_unit) + 0.8rem);
+        color: var(--accent_shade);
+        font-weight: bold;
+        background-color: #ffffff66;
+        background-size: 0;
+        filter: grayscale(100%);
+        display: flex;
+        align-items: center;
+
+        transition: background-color 0.5s, color 0.5s, box-shadow 0.5s, filter 0.5s;
+    }
+
+    .skill_card.active > div > div:last-child > div{
+        background-color: var(--color);
+        box-shadow: 0 0 0.5rem 0.1rem var(--color);
+        filter: grayscale(0);
+        color: #fff;
+    }
+
+    .skill_card > div > div:last-child > div::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(var(--min_unit));
+        width: calc(var(--min_unit));
+        z-index: 1;
+        content: attr(title);
+        content: "";
+        background-image: inherit;
+        background-size: calc(var(--min_unit)) calc(var(--min_unit));
+        background-repeat: no-repeat;
+        border-radius: inherit;
+        
+        transition: background-color 0.5s;
+    }
+
+    .skill_card.active > div > div:last-child > div::before{
+        background-color: #ffffffcc;
+    }
+
+}
+
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  LAPTOPS */
+@media only screen and (max-width: 450px)
+{
+
+    #skill_cards_wrapper{
+        padding: 0 0;
+    }
+
+}

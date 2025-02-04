@@ -1,6 +1,6 @@
 import './service_card.css';
 
-export default function serviceCardView(
+export default function serviceCard(
     serviceType: string,
     serviceTitle: string, 
     serviceDesc: string,
@@ -9,17 +9,19 @@ export default function serviceCardView(
     let serviceIcon: string = '';
 
     if(serviceType === 'web'){
-        serviceIcon = '&#xf121'
+        serviceIcon = 'fa-code'
     }else if(serviceType === 'graphics'){
-        serviceIcon = '&#xf5ad'
+        serviceIcon = 'fa-pen-nib'
     }else if(serviceType === '3D'){
-        serviceIcon = '&#xf1b2'
+        serviceIcon = 'fa-cube'
     }
 
     return `
-        <div class="service_card">
-            <div class="glass1" data-icon="${serviceIcon}"></div>
-            <h3>${serviceTitle}</h3>
+        <div class="service_card" data-service-type='${serviceType}' tabindex="1">
+            <h2>
+                <i class="fa-solid ${serviceIcon}"></i>
+                ${serviceTitle}
+            </h2>
             <p>${serviceDesc}</p>
         </div>
     `

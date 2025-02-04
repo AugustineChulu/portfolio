@@ -1,0 +1,65 @@
+#menu_wrapper{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    align-items: start;
+    gap: 2rem;
+}
+
+.menu_external_links_wrapper{
+    padding: 0 10%;
+    margin-bottom: 5rem;
+}
+
+.menu_external_links_wrapper > div:nth-child(1){
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.menu_external_links_wrapper > div:nth-child(2){
+    margin-top: 0.3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.menu_external_links_wrapper > div:nth-child(2) > a{
+    color: var(--txt);
+}
+
+.menu_external_links_wrapper > div:nth-child(2) > a::before{
+    background-color: var(--txt);
+}
+
+.menu_external_links_wrapper > div:nth-child(2) > a:hover,
+.menu_external_links_wrapper > div:nth-child(2) > a:focus{
+    color: var(--theme);
+}
+
+#copyright{
+    justify-self: center;
+    align-self: start;
+    position: relative;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 1rem;
+}
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
+@media only screen and (max-width: 1000px)
+{
+
+    
+
+}
+
+
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  LAPTOPS */
+@media only screen and (max-width: 450px)
+{
+
+
+
+}
