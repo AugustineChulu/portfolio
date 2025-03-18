@@ -197,14 +197,14 @@ tabs.forEach((tab, index) =>{
 
 /**************************************************************************************************************/
 const menu_btn = document.getElementById('menu_btn') as HTMLButtonElement;
-const menuView = document.getElementById('menuView') as HTMLDivElement;
+const menu_view = document.getElementById('menu_view') as HTMLDivElement;
 const theme_toggle = document.getElementById('theme_toggle') as HTMLDivElement;
 
 menu_btn.addEventListener('click', () =>{
 
     theme_toggle.classList.toggle('show')
     menu_btn.classList.toggle('focused')
-    menuView.classList.toggle('open')
+    menu_view.classList.toggle('open')
     active_view_title.classList.toggle('unfocused')
 
     if(menu_btn.classList.contains('focused')){

@@ -43,8 +43,8 @@
 
 #branding_x_me_wrapper{
     position: relative;
-    height: calc(var(--max_unit) * 1.8);
-    width: calc(var(--max_unit) * 1.8);
+    height: calc(var(--max_unit) * 1.65);
+    width: calc(var(--max_unit) * 1.65);
     background-color: var(--theme);
     border-radius: 100%;
     transform-style: preserve-3d;
