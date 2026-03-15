@@ -9,9 +9,12 @@
     <title>AUGUST</title>
   </head>
   <body>
-    <div id="app" class="dark">
+    <div id="app">
       <div id="vertical-box">
-        <div id="active_view_title">ABOUT ME</div>
+        <div id="active_view_title">
+          <i class="fa-solid fa-user-tie fa-lg"></i>
+          <span>ABOUT ME</span>
+        </div>
       </div>
 
       <div id="nav_box">
@@ -21,36 +24,35 @@
           </svg>
         </button>
 
-        <div id="theme_toggle" class="dark">
-          <button type="button" id="light_theme" title="light">
+        <button id="theme_toggle" type="button" title="theme toggle">
+          <div>
               <i class="fa-solid fa-sun fa-lg"></i>
-          </button>
-          
-          <button type="button" id="dark_theme" title="dark">
+          </div>
+          <div>
               <i class="fa-solid fa-moon fa-lg"></i>
-          </button>
-        </div>
+          </div>
+        </button>
 
         <div id="navbar">
             <div id="active_tab_indicator" class="dark"></div>
 
             <button type="button" title="about me" data-viewmap="ABOUT ME" class="tab active">
-                <i class="fa-solid fa-user-tie fa-lg"></i>
+                <i class="fa-solid fa-lg fa-user-tie"></i>
                 <span>About</span>
             </button>
     
             <button type="button" title="skillsets" data-viewmap="MY SKILLSETS" class="tab">
-                <i class="fa-solid fa-wand-magic-sparkles fa-lg"></i>
+                <i class="fa-solid fa-lg fa-wand-magic-sparkles"></i>
                 <span>Skills</span>
             </button>
 
             <button type="button" title="my works" data-viewmap="MY WORKS" class="tab">
-                <i class="fa-solid fa-pen-ruler fa-lg"></i>
+                <i class="fa-solid fa-lg fa-pen-ruler"></i>
                 <span>My Works</span>
             </button>
 
             <button type="button" title="services" data-viewmap="SERVICES I OFFER" class="tab">
-                <i class="fa-solid fa-hand-holding-medical fa-lg"></i>
+                <i class="fa-solid fa-lg fa-hand-holding-medical"></i>
                 <span>Services</span>
             </button>
         </div>
@@ -71,6 +73,11 @@
       </div>
 
       <div id="landing_page">
+        <div id="lp_background">
+          <!-- <canvas id="bg_canvas"></canvas> -->
+          <div id="bg_display_board"></div>
+        </div>
+                
         <div id="loading_intro_wrapper">
           <div id="progress_tracker" class="pulse">
             <svg class="brand_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
@@ -127,6 +134,6 @@
       </button>
       </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
   </body>
+  <script type="module" src="/src/main.ts"></script>
 </html>

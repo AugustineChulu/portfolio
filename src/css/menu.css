@@ -1,65 +1,98 @@
-#menu_wrapper{
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-auto-flow: row;
-    align-items: start;
-    gap: 2rem;
+#menu_wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  gap: 2rem;
+  overflow: auto;
 }
 
-.menu_external_links_wrapper{
-    padding: 0 10%;
-    margin-bottom: 5rem;
+#menu_content_wrapper {
+  padding-top: 5rem;
 }
 
-.menu_external_links_wrapper > div:nth-child(1){
-    text-align: center;
-    padding-bottom: 0.5rem;
+.menu_external_links_wrapper {
+  padding: 0 10%;
+  margin-bottom: 5rem;
 }
 
-.menu_external_links_wrapper > div:nth-child(2){
-    margin-top: 0.3rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+.menu_external_links_wrapper > h2 {
+  width: 100%;
+  text-align: center;
+  white-space: normal;
 }
 
-.menu_external_links_wrapper > div:nth-child(2) > a{
-    color: var(--txt);
+.menu_external_links_wrapper > p {
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
-.menu_external_links_wrapper > div:nth-child(2) > a::before{
-    background-color: var(--txt);
+.menu_links {
+  width: 50%;
+  margin: 0.3rem auto 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.menu_external_links_wrapper > div:nth-child(2) > a:hover,
-.menu_external_links_wrapper > div:nth-child(2) > a:focus{
-    color: var(--theme);
+.menu_links > a {
+  color: var(--txt);
+  background-color: transparent;
+  border: 2px solid var(--txt);
+  width: max-content;
+  text-align: end;
+  padding: 0 2rem 0 5rem;
+  display: grid;
+  align-items: center;
 }
 
-#copyright{
-    justify-self: center;
-    align-self: start;
-    position: relative;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 1rem;
+.menu_links > a > i {
+  left: 20%;
 }
 
-/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
-@media only screen and (max-width: 1000px)
-{
-
-    
-
+.menu_links > a > span {
+  z-index: 1;
 }
 
+.menu_links > a::before {
+  background-color: var(--txt);
+}
 
-/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  LAPTOPS */
-@media only screen and (max-width: 450px)
-{
+.menu_links > a:hover,
+.menu_links > a:focus {
+  color: var(--theme) !important;
+}
 
+#copyright {
+  position: fixed;
+  top: 0;
+  left: calc(var(--navbox_height));
+  right: 0;
+  width: calc(100% - 2rem - var(--navbox_height));
+  justify-self: center;
+  align-self: start;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 1rem;
+  background-color: var(--theme);
+}
 
+/* ------------------------------
+OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS
+------------------------------ */
+@media only screen and (max-width: 1000px) {
+  #copyright {
+    left: 0;
+    width: calc(100% - 2rem);
+  }
+}
 
+/* ------------------------------
+OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  SMARTPHONES
+------------------------------ */
+@media only screen and (max-width: 450px) {
 }

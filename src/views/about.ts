@@ -12,28 +12,41 @@ import '../css/about.css';
                         </svg>
                     </div>
 
-                    <div class="img_id_photo"></div>
+                    <div data-img="id_photo"></div>
+                    <p>
+                        <i class="fa-solid fa-graduation-cap"></i> &nbsp; BSc Computer Science (Merit) Mulungushi University<br> 
+                        <i class="fa-solid fa-laptop"></i> &nbsp; Web Development & Interactive Interfaces<br>
+                        <i class="fa-solid fa-palette"></i> &nbsp; Graphic Design & Visual Branding<br>
+                        <i class="fa-solid fa-cube"></i> &nbsp; 3D Modeling & Creative Digital Design<br>  
+                        <i class="fa-solid fa-bolt-lightning"></i> &nbsp; Embedded Systems & Technical Prototyping
+                    </p>
                 </div>
 
             </div>
 
             <div>
-                <h1>
+                <h1 class="view_title_header">
                     <i class="fa-solid fa-user-tie"></i>
                     ABOUT ME
                 </h1>
 
+                <h2>
+                    Developer & Designer building modern digital
+                    experiences where technology meets creativity.
+                </h2>
+
                 <p>
-                    Welcome to my creative world! I'm an undergraduate Computer Science student at Mulungushi University 
-                    and the creator of <b>AUGUST</b>, a brand dedicated to delivering exceptional services in web development, 
-                    graphic design, and 3D modeling.
-                    With a strong passion for creating stunning user interfaces, I specialize in combining intuitive 
-                    designs with seamless functionality. My expertise in Adobe Photoshop and Illustrator allows me to 
-                    craft captivating visuals, while my 3D modeling skills add depth and innovation to projects.
-                    Through <b>AUGUST</b>, I aim to transform ideas into impactful designs—whether it's building standout websites, 
-                    designing compelling graphics, or creating dynamic 3D models. Explore my portfolio and discover 
-                    how <b>AUGUST</b> bridges technology and artistry to turn your vision into reality. Let's create something 
-                    extraordinary together!
+                    <br>
+                    I'm <b>Augustine Chulu</b>, a Computer Science graduate from <b>Mulungushi University</b>, 
+                    where I earned a <b>Bachelor’s Degree in Computer Science with Merit</b>. I’m also the founder of <b>AUGUST</b>, 
+                    a brand focused on delivering modern solutions in <b>web development, graphic design, and 3D modeling</b>.
+                    <br><br>
+                    I specialize in building digital experiences that combine <b>clean design, intuitive user interfaces, 
+                    and reliable functionality</b>. By blending development and visual design, 
+                    I create products that are both visually engaging and technically solid.
+                    <br><br>
+                    Through <b>AUGUST</b>, I work to transform ideas into impactful digital solutions from modern websites and 
+                    visual branding to creative 3D concepts always aiming to build work that <b>looks great, performs well, and delivers real value.</b>
                 </p>
             </div>
         </div>

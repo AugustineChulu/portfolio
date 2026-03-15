@@ -1,108 +1,101 @@
-.service_card{
-    position: relative;
-    flex: 0 0 calc(var(--max_unit) * 1.5);
-    max-width: calc(var(--max_unit) * 1.5);
-    min-height: calc(var(--max_unit) * 1.2);
-    cursor: default;
+.service_card {
+  position: relative;
+  flex: 0 0 calc(var(--max_unit) * 1.5);
+  max-width: calc(var(--max_unit) * 1.5);
+  min-height: calc(var(--max_unit) * 1);
+  cursor: default;
 
-    transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
 }
 
-.service_card::before{
-    position: absolute;
-    z-index: -1;
-    content: attr(data-service-type);
-    color: var(--accent);
-    font-family: gabarito-mid;
-    text-transform: uppercase;
-    font-size: 2.5em;
-    top: calc(var(--min_unit) * 1.6 + 1rem);
-    right: calc(100% - (var(--min_unit) * 1.6) / 2 - 0.1rem);
-    transform-origin: 100% 0%;
-    transform: rotate(-90deg);
-    width: max-content;
+.service_card::before {
+  position: absolute;
+  z-index: -1;
+  content: attr(data-service-type);
+  color: var(--accent);
+  font-family: gabarito-mid;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  top: calc(var(--min_unit) * 1.6 + 1rem);
+  right: calc(100% - (var(--min_unit) * 1.6) / 2 - 0.1rem);
+  transform-origin: 100% 0%;
+  transform: rotate(-90deg);
+  width: max-content;
 
-    transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 .service_card:hover h2 > i,
 .service_card:focus h2 > i,
 .service_card:hover p,
-.service_card:focus p{
-    background-color: var(--txt);
+.service_card:focus p {
+  background-color: var(--txt);
 }
 
 .service_card:hover::before,
-.service_card:focus::before{
-    color: var(--txt);
+.service_card:focus::before {
+  color: var(--txt);
 }
 
-.service_card > h2{
-    position: relative;
-    height: calc(var(--min_unit) * 1.6);
-    width: 100%;
-    white-space: wrap;
-    box-sizing: border-box;
-    padding: 0 0 0 calc(var(--min_unit) * 2);
-    display: flex;
-    align-items: center;
+.service_card > h2 {
+  position: relative;
+  height: calc(var(--min_unit) * 1.6);
+  width: 100%;
+  white-space: wrap;
+  box-sizing: border-box;
+  padding: 0 0 0 calc(var(--min_unit) * 2);
+  display: flex;
+  align-items: center;
 
-    transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 .service_card:hover > h2,
-.service_card:focus > h2{
-    color: var(--surface);
+.service_card:focus > h2 {
+  color: var(--surface);
 }
 
-.service_card > h2 > i{
-    position: absolute; 
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: calc(var(--min_unit) * 1.6);
-    width: calc(var(--min_unit) * 1.6);
-    display: grid;
-    place-items: center;
-    color: var(--theme);
-    font-size: 0.8em;
-    background-color: var(--accent_tint);
+.service_card > h2 > i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(var(--min_unit) * 1.6);
+  width: calc(var(--min_unit) * 1.6);
+  display: grid;
+  place-items: center;
+  color: var(--theme);
+  font-size: 0.8em;
+  background-color: var(--accent_tint);
 
-    transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 
-.service_card > p{
-    height: calc( 100% - var(--min_unit) * 1.6 - 3rem);
-    padding: 1rem 2rem 2rem 2rem;
-    margin-left: calc(var(--min_unit) * 1.6);
-    color: var(--theme);
-    background-color: var(--accent_tint);
+.service_card > p {
+  height: calc(100% - var(--min_unit) * 1.6 - 3rem);
+  padding: 1rem 2rem 2rem 2rem;
+  margin-left: calc(var(--min_unit) * 1.6);
+  color: var(--theme);
+  background-color: var(--accent_tint);
 
-    transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 
 /*OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS */
-@media only screen and (max-width: 1000px)
-{
+@media only screen and (max-width: 1000px) {
+  .service_card {
+    flex: 1 0 calc(var(--max_unit));
+  }
 
-    .service_card{
-        flex: 1 0 calc(var(--max_unit));
-    }
-
-    .service_card::before{
-        font-size: 2em;
-    }
-
+  .service_card::before {
+    font-size: 2em;
+  }
 }
 
-
-/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  LAPTOPS */
-@media only screen and (max-width: 450px)
-{
-
-    .service_card{
-        flex: 1 0 100%;
-        max-width: unset;
-    }
-
+/*OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  SMARTPHONES */
+@media only screen and (max-width: 450px) {
+  .service_card {
+    flex: 1 0 100%;
+    max-width: unset;
+  }
 }

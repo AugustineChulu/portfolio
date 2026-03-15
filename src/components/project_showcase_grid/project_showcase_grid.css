@@ -1,0 +1,76 @@
+.projectShowcaseGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+
+  transition: opacity 1s 0.5s;
+}
+
+.projectShowcaseGrid[data-position="focused_card"] {
+  opacity: 1;
+}
+
+.projectShowcaseGrid > .project_details {
+  text-align: center;
+}
+
+.projectShowcaseGrid > .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.projectShowcaseGrid > .grid > .grid_item {
+  position: relative;
+  height: 30rem;
+  width: 100%;
+  background-image: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.projectShowcaseGrid > .grid > .grid_item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(0.5rem) grayscale(100%);
+}
+
+.projectShowcaseGrid > .grid > .grid_item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: inherit;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ------------------------------
+OPTIMIZATION FOR TALL ASPECT RATIOS WITH MEDIUM SCREEN SIZES ||  TABLETS
+------------------------------ */
+@media only screen and (max-width: 1000px) {
+  .projectShowcaseGrid > .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ------------------------------
+OPTIMIZATION FOR TALL ASPECT RATIOS WITH SMALL SCREEN SIZES ||  SMARTPHONES
+------------------------------ */
+@media only screen and (max-width: 450px) {
+  .projectShowcaseGrid > .grid {
+    grid-template-columns: 1fr;
+  }
+}
